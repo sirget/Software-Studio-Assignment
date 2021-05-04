@@ -1,2 +1,2 @@
 # Software Studio Assignment
- Software Studio Assignmenr Year 3 Semester 2
+ Software Studio Assignment Year 3 Semester 2
