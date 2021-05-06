@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj": {}
+    "d:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj": {
+    "d:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "d:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "d:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\koond\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\obj\\",
+        "outputPath": "d:\\Git\\sirget\\Software-Studio-Assignment\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
