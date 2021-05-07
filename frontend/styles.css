@@ -4,21 +4,25 @@ body {
   justify-content: center;
   font-family: Prompt;
 }
-.labcard {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  background-color: #c4c4c4;
-  margin: 10px;
+.wrapper {
+  width: 600px;
 }
-
-.labcard .cardhead {
+.seltime {
+  background-color: #c4c4c4;
+  padding: 5px;
+}
+.topic {
   background-color: #2e2d2d;
   color: white;
+  padding: 5px;
 }
-
-.labcard button {
-  font-family: Prompt;
-  background-color: #59fd3e;
-  border: 0px;
+.seltime {
+  display: flex;
+  flex-direction: row;
+}
+.seltime .selhour {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  flex-flow: wrap;
 }

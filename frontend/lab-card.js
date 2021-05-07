@@ -12,6 +12,7 @@ template.innerHTML=`
 .labcard .cardhead {
   background-color: #2e2d2d;
   color: white;
+  padding : 5px;
 }
 
 .labcard button {
@@ -37,6 +38,19 @@ class LabCard extends HTMLElement{
 
         
     }
+    handleClick(){
+        console.log(this.getAttribute('name'))
+
+    }
+    connectedCallback(){
+        this.shadowRoot.querySelector('button').addEventListener('click',() => this.handleClick());
+    }
+    discoonnectedCallback(){
+        this.shadowRoot.querySelector('button').removeEventListener();
+    }
     
 }
 customElements.define('lab-card', LabCard);
+
+
+
