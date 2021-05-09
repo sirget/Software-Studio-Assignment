@@ -4,36 +4,94 @@ template.innerHTML=`
 .labcard {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  background-color: #c4c4c4;
+  width: 225px;
+  height: 400px;
   margin:10px;
+ 
 }
 
-.labcard .cardhead {
-  background-color: #2e2d2d;
-  color: white;
-  padding : 5px;
+.labcard{
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+}
+
+.cardhead {
+margin:10px;
+margin-bottom: 0;
+color:#00BFA5;
+font-weight: bold;
+font-size:20px;
+}
+.labcard {
+  margin-top: 0;
+  background-color:white;
+  border-radius: 10px;
 }
 
 .labcard button {
   font-family: Prompt;
-  background-color: #59fd3e;
+  background-color: #009688;
   border: 0px;
+  color:white;
+  border-radius: 25px;
+  width:100%;
+  height:30px;
+  font-size:16px;
 }
+.labcard  .detail{
+ 
+ 
+  padding:20px;
+}
+.labcard .detail p{
+  overflow-wrap: anywhere;
+}
+.labcard img{
+  border-radius: 10px;
+}
+.labcard .detail label{
+  margin:0;
+  padding:0;
+}
+h3{
+  margin:0;
+}
+
+label{
+  font-size:12px;
+  color:gray;
+}
+p{
+  
+  font-size:14px;
+  color:gray;
+}
+
+
+
 </style>
-<div class="labcard">
-      <div class="cardhead" id="cardhead"></div>
-      <img
-        src="https://cdn.discordapp.com/attachments/366279112488124416/839898183957610506/arduino-uno-rev3-a000066-0f4.png"
-      />
-      <button>Book</button>
-    </div>`
+<div class="cardhead" id="cardhead"></div>
+  <div class="labcard">
+    <img/>
+    <div class="detail">
+    <h3>Voltmeter</h3>
+    <label>12 pcs</label>
+    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+    <button>BOOK</button>
+    </div>
+  </div>`
 class LabCard extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:'open'});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.getElementById("cardhead").innerText=this.getAttribute('name');
+        this.shadowRoot.querySelector('img').setAttribute('src',this.getAttribute('image'));
 
 
         

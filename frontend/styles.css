@@ -3,6 +3,7 @@ body {
   flex-direction: row;
   justify-content: center;
   font-family: Prompt;
+  background-color: #f6fffd;
 }
 .wrapper {
   width: 600px;
