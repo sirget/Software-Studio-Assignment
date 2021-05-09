@@ -3,27 +3,40 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: Prompt;
+  background-color: #f6fffd;
 }
 .wrapper {
   width: 80%;
 }
 .card-container {
   display: flex;
-}
-.seltime {
-  background-color: #c4c4c4;
-  padding: 5px;
+  flex-flow: wrap;
 }
 .topic {
-  background-color: #2e2d2d;
-  color: white;
+  color: #00bfa5;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+/* sel-time */
+.sel {
   padding: 5px;
 }
-.seltime {
+.sel .seldate {
+  display: flex;
+  flex-direction: column;
+}
+.sel .seldate input {
+  border-color: #009688;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.sel {
   display: flex;
   flex-direction: row;
 }
-.seltime .selhour {
+.sel .selhour {
   display: flex;
   flex-direction: row;
   padding: 10px;

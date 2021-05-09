@@ -13,24 +13,26 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="topic">Select Time</div>
-      <div class="seltime">
+      <div class="topic">Select Booking Time</div>
+      <div class="sel">
         <div class="seldate">
           <label>Date</label>
           <input id="dateinput" type="date" />
-          <label>จำนวน</label>
+          <label>Equity</label>
           <input type="number" min="0" />
         </div>
         <div class="selhour">
-          <time-card hour="8.00" vol="20"></time-card>
-          <time-card hour="9.00" vol="20"></time-card>
-          <time-card hour="10.00" vol="20"></time-card>
-          <time-card hour="11.00" vol="20"></time-card>
-          <time-card hour="12.00" vol="20"></time-card>
-          <time-card hour="13.00" vol="20"></time-card>
-          <time-card hour="14.00" vol="20"></time-card>
-          <time-card hour="15.00" vol="20"></time-card>
-          <time-card hour="16.00" vol="20"></time-card>
+          <div class="card-container">
+            <time-card hour="8.00" vol="20" enough="true"></time-card>
+            <time-card hour="9.00" vol="20"></time-card>
+            <time-card hour="10.00" vol="20"></time-card>
+            <time-card hour="11.00" vol="20"></time-card>
+            <time-card hour="12.00" vol="20"></time-card>
+            <time-card hour="13.00" vol="20"></time-card>
+            <time-card hour="14.00" vol="20"></time-card>
+            <time-card hour="15.00" vol="20"></time-card>
+            <time-card hour="16.00" vol="20"></time-card>
+          </div>
         </div>
       </div>
     </div>
