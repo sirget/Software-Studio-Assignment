@@ -1,18 +1,14 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   font-family: Prompt;
-  background-color: #f6fffd;
-  padding: 30px;
+}
+.wrapper {
+  width: 80%;
 }
 .card-container {
   display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
-}
-.wrapper {
-  width: 600px;
 }
 .seltime {
   background-color: #c4c4c4;
