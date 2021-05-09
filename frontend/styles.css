@@ -1,9 +1,14 @@
 body {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   font-family: Prompt;
   background-color: #f6fffd;
+  padding: 30px;
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
   flex-flow: wrap;
 }
 .wrapper {
