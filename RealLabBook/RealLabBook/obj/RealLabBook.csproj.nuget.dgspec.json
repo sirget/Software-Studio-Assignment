@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
+    "C:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
+    "C:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "projectUniqueName": "C:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
         "projectName": "RealLabBook",
-        "projectPath": "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
-        "packagesPath": "C:\\Users\\Pnach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\obj\\",
+        "projectPath": "C:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+        "packagesPath": "C:\\Users\\bestv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pnach\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bestv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -79,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
