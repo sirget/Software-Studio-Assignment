@@ -8,17 +8,10 @@ namespace ToolBooking.Models
 {
     public class BookingDetail
     {
-        public string id { get; set; }
-        public string uid { get; set; }
-        public int itemid { get; set; }
-
-        [DataType(DataType.Date)]
-        public DateTime start_date { get; set; }
-
-        public BookingDetail()
-        {
-
-        }
-
+        [Key]
+        public int BookingID { get; set; }
+        public int ToolID { get; set; }
+        public string UserID { get; set; }
+        public string start_time { get; set; }
     }
 }

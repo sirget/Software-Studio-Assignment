@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5ew7Hmcpj6r+Raw5NtuuWVomOb3Wu3htQn/5EcZoKJEbUx486XzQakS+kcwT4/w/HicUQ9ZPR2QyABkSmobVVQ==",
+  "dgSpecHash": "iCgJq3kaeCFbmHAmjHSX1E1A/OdbLtwP5eUsGBH218q7flnWBeRlIBECYvPt5fPuBk7qtfptXJO7fSMCh/qerQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pnach\\Desktop\\Test\\ToolBooking\\ToolBooking\\ToolBooking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pnach\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Pnach\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.5\\microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",
     "C:\\Users\\Pnach\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.5\\microsoft.aspnetcore.cryptography.keyderivation.5.0.5.nupkg.sha512",
-    "C:\\Users\\Pnach\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.5\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.5.nupkg.sha512",
+    "C:\\Users\\Pnach\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.6\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.6.nupkg.sha512",
     "C:\\Users\\Pnach\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Pnach\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.5\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.5.nupkg.sha512",
     "C:\\Users\\Pnach\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.5\\microsoft.aspnetcore.identity.ui.5.0.5.nupkg.sha512",

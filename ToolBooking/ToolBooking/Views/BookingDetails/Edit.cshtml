@@ -12,21 +12,21 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="id" />
+            <input type="hidden" asp-for="BookingID" />
             <div class="form-group">
-                <label asp-for="uid" class="control-label"></label>
-                <input asp-for="uid" class="form-control" />
-                <span asp-validation-for="uid" class="text-danger"></span>
+                <label asp-for="ToolID" class="control-label"></label>
+                <input asp-for="ToolID" class="form-control" />
+                <span asp-validation-for="ToolID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="itemid" class="control-label"></label>
-                <input asp-for="itemid" class="form-control" />
-                <span asp-validation-for="itemid" class="text-danger"></span>
+                <label asp-for="UserID" class="control-label"></label>
+                <input asp-for="UserID" class="form-control" />
+                <span asp-validation-for="UserID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="start_date" class="control-label"></label>
-                <input asp-for="start_date" class="form-control" />
-                <span asp-validation-for="start_date" class="text-danger"></span>
+                <label asp-for="start_time" class="control-label"></label>
+                <input asp-for="start_time" class="form-control" />
+                <span asp-validation-for="start_time" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
