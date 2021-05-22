@@ -6141,19 +6141,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pnach\\.nuget\\packages\\": {}
+    "C:\\Users\\koond\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+      "projectUniqueName": "D:\\Git\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
       "projectName": "RealLabBook",
-      "projectPath": "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
-      "packagesPath": "C:\\Users\\Pnach\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pnach\\Documents\\GitHub\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\obj\\",
+      "projectPath": "D:\\Git\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\RealLabBook.csproj",
+      "packagesPath": "C:\\Users\\koond\\.nuget\\packages\\",
+      "outputPath": "D:\\Git\\Software-Studio-Assignment\\RealLabBook\\RealLabBook\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Pnach\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\koond\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
