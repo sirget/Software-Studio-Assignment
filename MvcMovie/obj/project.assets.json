@@ -7805,11 +7805,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\Software-Studio-Assignment\\MvcMovie\\MvcMovie.csproj",
+      "projectUniqueName": "d:\\Git\\Software-Studio-Assignment\\MvcMovie\\MvcMovie.csproj",
       "projectName": "MvcMovie",
-      "projectPath": "D:\\Git\\Software-Studio-Assignment\\MvcMovie\\MvcMovie.csproj",
+      "projectPath": "d:\\Git\\Software-Studio-Assignment\\MvcMovie\\MvcMovie.csproj",
       "packagesPath": "C:\\Users\\koond\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\Software-Studio-Assignment\\MvcMovie\\obj\\",
+      "outputPath": "d:\\Git\\Software-Studio-Assignment\\MvcMovie\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
