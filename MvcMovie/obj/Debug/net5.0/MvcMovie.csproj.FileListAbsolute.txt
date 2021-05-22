@@ -38,3 +38,4 @@ d:\Git\Software-Studio-Assignment\MvcMovie\obj\Debug\net5.0\ref\MvcMovie.dll
 d:\Git\Software-Studio-Assignment\MvcMovie\obj\Debug\net5.0\MvcMovie.pdb
 d:\Git\Software-Studio-Assignment\MvcMovie\obj\Debug\net5.0\MvcMovie.genruntimeconfig.cache
 d:\Git\Software-Studio-Assignment\MvcMovie\obj\Debug\net5.0\MvcMovie.csproj.CopyComplete
+d:\Git\Software-Studio-Assignment\MvcMovie\obj\Debug\net5.0\Razor\Views\HelloWorld\index.cshtml.g.cs
