@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f6fffd;
+  padding: 30px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+}
+.login .login-form {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+  max-width: 50%;
+  background-color: #fff;
+  padding: 60px 45px;
+}
+@media only screen and (max-width: 766px) {
+  .login .login-form {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .login .login-form {
+    padding: 40px 20px;
+  }
+}
+.login-label{
+    font-size: .9rem;
+    color: #00BFA5;
+    margin: 0;
+}
+
+.login-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #263238;
+  margin-bottom: 25px;
+}
+.input-wrapper {
+    margin-bottom: 15px;
+}
+.label, .input {
+  display: block;
+  width: 100%;
+}
+
+.label {
+  padding-bottom: 3px;
+  font-size: 0.9rem;
+  color: #263238;
+}
+.input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1.5px solid #009688;
+}
+
+.action {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  color: #fff;
+  background-color: #009688;
+  text-decoration: none;
+  border: none;
+}
+
+.register-link{
+    text-align: center;
+    font-size: .8rem;
+    color: #263238;
+}
+.register-link a{
+    text-decoration: none;
+    font-size: .8rem;
+    color: #009688;
+}
+
+.login .login-decoration {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+  background-image: url("https://images.unsplash.com/photo-1518770660439-4636190af475?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
+  background-position: center;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 767.98px) {
+  .login .login-decoration {
+    display: none;
+  }
+}
