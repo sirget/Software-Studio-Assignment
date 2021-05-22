@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 
 <head>
@@ -6,22 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <h1>Login</h1>
-    <form action="/index.html">
-        <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Type here" required>
+
+    <div class="wrapper">
+        <div class="login">
+            <div class="login-decoration"></div>
+            <div class="login-form">
+                <p class="login-label">LABBOOK</p>
+                <h1 class="login-title">Login</h1>
+                <div class="form-wrapper">
+                    <form action="/login">
+                        <div class="input-wrapper">
+                            <label class="label" for="email">Email Address</label>
+                            <input class="input" type="email" id="email" name="email" required>
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="label" for="password">Password</label>
+                            <input class="input" type="password" id="password" name="password" required>
+                        </div>
+                        <button class="action" type="submit">Login</button>
+                        <p class="register-link">Haven’t an account? <a href="./register.html">Register</a></p>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Type here" required>
-        </div>
-        <button type="submit">Login</button>
-    </form>
-    <a href="/register.html">Register</a>
+
 </body>
 
 </html>
