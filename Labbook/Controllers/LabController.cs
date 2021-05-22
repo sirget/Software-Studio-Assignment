@@ -8,9 +8,10 @@ namespace Labbook.Controllers
         // 
         // GET: /HelloWorld/
 
-        public string Index()
+        public IActionResult Index(int ID = 0)
         {
-            return "This is my default action...";
+            ViewBag.LabID = ID;
+            return View();
         }
 
         // 

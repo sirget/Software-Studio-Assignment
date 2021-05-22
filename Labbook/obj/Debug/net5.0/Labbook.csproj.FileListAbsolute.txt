@@ -38,3 +38,4 @@ c:\Users\bestv\Documents\GitHub\Software-Studio-Assignment\Labbook\obj\Debug\net
 c:\Users\bestv\Documents\GitHub\Software-Studio-Assignment\Labbook\obj\Debug\net5.0\Labbook.pdb
 c:\Users\bestv\Documents\GitHub\Software-Studio-Assignment\Labbook\obj\Debug\net5.0\Labbook.genruntimeconfig.cache
 c:\Users\bestv\Documents\GitHub\Software-Studio-Assignment\Labbook\obj\Debug\net5.0\Labbook.csproj.CopyComplete
+c:\Users\bestv\Documents\GitHub\Software-Studio-Assignment\Labbook\obj\Debug\net5.0\Razor\Views\Lab\Index.cshtml.g.cs
