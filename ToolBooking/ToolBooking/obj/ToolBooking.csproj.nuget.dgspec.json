@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pnach\\Desktop\\Test\\ToolBooking\\ToolBooking\\ToolBooking.csproj": {}
+    "d:\\Git\\Software-Studio-Assignment\\ToolBooking\\ToolBooking\\ToolBooking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pnach\\Desktop\\Test\\ToolBooking\\ToolBooking\\ToolBooking.csproj": {
+    "d:\\Git\\Software-Studio-Assignment\\ToolBooking\\ToolBooking\\ToolBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pnach\\Desktop\\Test\\ToolBooking\\ToolBooking\\ToolBooking.csproj",
+        "projectUniqueName": "d:\\Git\\Software-Studio-Assignment\\ToolBooking\\ToolBooking\\ToolBooking.csproj",
         "projectName": "ToolBooking",
-        "projectPath": "C:\\Users\\Pnach\\Desktop\\Test\\ToolBooking\\ToolBooking\\ToolBooking.csproj",
-        "packagesPath": "C:\\Users\\Pnach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pnach\\Desktop\\Test\\ToolBooking\\ToolBooking\\obj\\",
+        "projectPath": "d:\\Git\\Software-Studio-Assignment\\ToolBooking\\ToolBooking\\ToolBooking.csproj",
+        "packagesPath": "C:\\Users\\koond\\.nuget\\packages\\",
+        "outputPath": "d:\\Git\\Software-Studio-Assignment\\ToolBooking\\ToolBooking\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Pnach\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\koond\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
