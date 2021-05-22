@@ -1,0 +1,25 @@
+@{
+    var labid = ViewBag.LabID;
+    if (labid == 0)
+    {
+        ViewData["Title"] = "AllLab";
+        <div class="text-center">
+            <h1 class="display-4">All Lab</h1>
+        </div>
+        <ul>
+        @for ( int  i = 1 ; i < 11 ; i++){
+<li><a asp-action="Index" asp-route-id="@i">Lab @i</a></li>
+        }   
+        </ul>
+        
+    }
+    else
+    {
+        ViewData["Title"] = $"Lab {labid}";
+        <div class="text-center">
+            <h1 class="display-4">Lab @ViewBag.LabID</h1>
+            <p>Learn about <a asp-action="Index" asp-route-id="0">All Lab</a>.</p>
+        </div>
+    }
+}
+
