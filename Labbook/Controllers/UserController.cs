@@ -3,7 +3,7 @@ using System.Text.Encodings.Web;
 
 namespace Labbook.Controllers
 {
-    public class LabController : Controller
+    public class UserController : Controller
     {
         // 
         // GET: /HelloWorld/
