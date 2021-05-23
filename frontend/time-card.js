@@ -109,6 +109,7 @@ class TimeCard extends HTMLElement {
     this.shadowRoot.getElementById("vol").innerText = this.getAttribute("vol");
     if (this.getAttribute("enough") == "true") {
       this.enable=true;
+      this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
     }
     else{
         this.enable=false;
@@ -136,8 +137,20 @@ class TimeCard extends HTMLElement {
         
     }
   }
+  static get observedAttributes() {
+    return ["enough"];
+  }
   attributeChangedCallback(name, oldValue, newValue) {
-    console.log('Custom square element attributes changed.');
+      this.setAttribute("select","false");
+    if (this.getAttribute("enough") == "true") {
+        this.enable=true;
+        this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
+      }
+      else{
+          this.enable=false;
+          this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card disabled"); 
+      }
+
    
   }
  
@@ -152,7 +165,8 @@ class TimeCard extends HTMLElement {
   
 }
 customElements.define("time-card", TimeCard);
-var selectItem=[0,0,0,0,0,0,0,0];
+var selectList=[0,0,0,0,0,0,0,0];
+var user,date,eqt;
 document
   .getElementById("dateinput")
   .addEventListener("change", () => handleChangeDate());
@@ -167,7 +181,7 @@ function handleChangeDate() {
   console.log(document.getElementById("dateinput").value);
 }
 function handleBook(){
-    var selectList = [],i;
+    var i;
     for(i = 0 ; i < 8 ;i++)
     {
         if(document.getElementById("card"+(i+1)).getAttribute("select") == "true"){
@@ -177,21 +191,28 @@ function handleBook(){
             selectList[i]=0;
         }
     }
-     console.log(selectList)
+    user = document.getElementById('userinput').value;
+    date = document.getElementById("dateinput").value;
+    eqt = document.getElementById("eqtinput").value;
+    if(user=='' || date=='' || eqt==''){
+        alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+    }
+    else{
+        console.log(selectList,user,date,eqt);
+    }
+     
 }
 function handleEqtchange(){
     var i,want,tmpcard;
+    
     want = document.getElementById("eqtinput").value;
     for(i=0;i<8;i++){
         tmpcard = document.getElementById("card"+(i+1));
         if(want > parseInt(tmpcard.getAttribute("vol"))){
-            //console.log("A" + (i+1));
             tmpcard.setAttribute("enough","false");
         }
         else{
-            //console.log("B" + (i+1));
             tmpcard.setAttribute("enough","true");
-            //console.log(tmpcard);
         }
     }
 }
