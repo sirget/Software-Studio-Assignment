@@ -120,8 +120,7 @@ class TimeCard extends HTMLElement {
   handleClick() {
     
     if(this.enable == true){
-        console.log(this.getAttribute("hour") + "was Click");
-        console.log(this.enable);
+        
         if(this.check == true)
         {
             this.setAttribute("select","false");
@@ -167,19 +166,17 @@ class TimeCard extends HTMLElement {
 customElements.define("time-card", TimeCard);
 var selectList=[0,0,0,0,0,0,0,0];
 var user,date,eqt;
-document
-  .getElementById("dateinput")
-  .addEventListener("change", () => handleChangeDate());
+
 document
   .getElementById("sel-book")
   .addEventListener("click", () => handleBook());
 document
   .getElementById("eqtinput")
   .addEventListener("change", () => handleEqtchange());
+document
+  .getElementById("sel-search")
+  .addEventListener("click", () => handleSearch());
 
-function handleChangeDate() {
-  console.log(document.getElementById("dateinput").value);
-}
 function handleBook(){
     var i;
     for(i = 0 ; i < 8 ;i++)
@@ -214,6 +211,17 @@ function handleEqtchange(){
         else{
             tmpcard.setAttribute("enough","true");
         }
+    }
+}
+
+function handleSearch(){
+    date = document.getElementById("dateinput").value;
+    if(date=='')
+    {
+        alert("กรุณากรอก Date");
+    }
+    else{
+        console.log("Searching : "+date);
     }
 }
 
