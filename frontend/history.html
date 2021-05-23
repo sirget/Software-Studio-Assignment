@@ -1,67 +1,38 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-* {
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-}
-
-.search{
-    margin:auto;
-    max-width:800px;
-    border-radius: 25px;
-    overflow: hidden;
-    padding: 10px;
-    background: #f1f1f1;
-}
-
-.search input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  float: left;
-  width: 90%;
-  background: #f1f1f1;
-  border: none;
-  padding-left: 20px;
-}
-
-.search button {
-  float: left;
-  width: 10%;
-  padding: 10px;
-  color: white;
-  font-size: 17px;
-  border-left: none;
-  cursor: pointer;
-  border: none;
-}
-
-.search button:hover {
-  color: aqua;
-  border: none;
-}
-
-.search::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="history.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>History</title>
 </head>
-<body>
-<form class="search" action="">
-  <input type="text" placeholder="Search here..." name="search">
-  <button type="submit"><i class="fa fa-search"></i></button>
-</form>
 
+<body>
+    <div class="search-box" action="">
+        <input id="text-input" placeholder="Search ID here...">
+        <button onclick="getInputValue();"><i class="fa fa-search"></i></button>
+    </div>
+    <div class="text-id">ID: <span id="print-text">-</span></div>
+    <table class="history-table">
+        <tr>
+          <th>Equipment</th>
+          <th>Status</th>
+          <th>Date Start</th>
+          <th>Date End</th>
+        </tr>
+        <tr>
+            <td>Volmeter</td>
+            <td>Booking</td>
+            <td>2021-11-01 10:00</td>
+            <td>2021-11-01 11:00</td>
+        </tr>
+    <script>
+        function getInputValue(){
+            var inputVal = document.getElementById("text-input").value;
+            document.getElementById('print-text').innerHTML = inputVal;
+        }
+    </script>
 </body>
-</html> 
+
+</html>
