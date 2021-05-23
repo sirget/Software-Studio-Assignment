@@ -26,7 +26,9 @@ template.innerHTML = `
   align-items: center;
   justify-content: center;
 }
-
+.hour-card{
+    cursor:pointer;
+}
 .hour-card .start,
 .end {
   font-size: medium;
@@ -67,6 +69,7 @@ template.innerHTML = `
 /* disabled styles */
 .disabled {
   background: #d4d6d7;
+  cursor:default;
 }
 
 .disabled .time {
@@ -82,44 +85,177 @@ template.innerHTML = `
 
 .disabled .remain{
     color: white;
-}</style>
-<div class="hour-card">
+}
+
+</style>
+<div class="hour-card " id="hour-card">
         <div class="time">
-            <p class="hour start">8:00</p>
-            <p class="hour end">-9:00</p>
+            <p class="hour start" id="start_hour">8:00</p>
+            <p class="hour end" id="end_hour">-9:00</p>
         </div>
-        <p class="remain">remain: <span class="vol">10</span></p>
+        <p class="remain">remain: <span class="vol" id="vol">10</span></p>
     </div>`;
 class TimeCard extends HTMLElement {
   constructor() {
     super();
+    var enable =true;
+    var click = false;
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this.shadowRoot.getElementById("hour").innerText =
+    this.shadowRoot.getElementById("start_hour").innerText =
       this.getAttribute("hour");
-    this.shadowRoot.getElementById("vol").innerText = this.getAttribute("vol");
+    this.shadowRoot.getElementById("end_hour").innerText =
+      this.getAttribute("e_hour");
+    
     if (this.getAttribute("enough") == "true") {
-      console.log("red");
+      this.enable=true;
+      this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
     }
+    else{
+        this.enable=false;
+        this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card disabled"); 
+    }
+
   }
   handleClick() {
-    console.log(this.getAttribute("hour") + "was Click");
+    
+    if(this.enable == true){
+        
+        if(this.check == true)
+        {
+            this.setAttribute("select","false");
+            this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card ");
+            
+        }
+        else{
+            this.setAttribute("select","true");
+            this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card selected");
+            
+        }
+        this.check=!this.check;
+        
+    }
   }
+  static get observedAttributes() {
+    return ["enough","vol"];
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+      if(name=="enough"){
+        this.setAttribute("select","false");
+        this.check=false;
+        if (this.getAttribute("enough") == "true") {
+          this.enable=true;
+          this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
+        }
+        else{
+            this.enable=false;
+            this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card disabled"); 
+        }
+      }
+      else if(name=="vol"){
+        this.shadowRoot.getElementById("vol").innerText = this.getAttribute("vol");
+      }
+      
+
+   
+  }
+ 
   connectedCallback() {
     this.shadowRoot
       .querySelector(".hour-card")
       .addEventListener("click", () => this.handleClick());
   }
-  discoonnectedCallback() {
+  disconnectedCallback() {
     this.shadowRoot.querySelector(".hour-card").removeEventListener();
   }
+  
 }
 customElements.define("time-card", TimeCard);
 
-document
-  .getElementById("dateinput")
-  .addEventListener("change", () => handleChangeDate());
 
-function handleChangeDate() {
-  console.log(document.getElementById("dateinput").value);
+
+// JS main
+var selectList=[0,0,0,0,0,0,0,0];
+var user,date,eqt;
+var inputVol=[40,10,10,20,10,30,10,20];
+changeCardVol();
+document
+  .getElementById("sel-book")
+  .addEventListener("click", () => handleBook());
+document
+  .getElementById("eqtinput")
+  .addEventListener("change", () => handleEqtchange());
+document
+  .getElementById("sel-search")
+  .addEventListener("click", () => handleSearch());
+
+function changeCardVol(){
+    for(var i=0;i<8;i++){
+        tmpcard = document.getElementById("card"+(i+1));
+        tmpcard.setAttribute("vol",inputVol[i]);
+    }
 }
+function handleBook(){
+    var i;
+    for(i = 0 ; i < 8 ;i++)
+    {
+        if(document.getElementById("card"+(i+1)).getAttribute("select") == "true"){
+            selectList[i]=1;
+        }
+        else{
+            selectList[i]=0;
+        }
+    }
+    user = document.getElementById('userinput').value;
+    date = document.getElementById("dateinput").value;
+    eqt = document.getElementById("eqtinput").value;
+    if(user=='' || date=='' || eqt==''){
+        alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+    }
+    else{
+        var quan="";
+        for(var i=0;i<8;i++){
+            quan=quan+selectList[i];
+        }
+        if(quan=="00000000"){
+            alert("กรุณาเลือกเวลาจอง");
+        }
+        else{
+            console.log(quan,user,changeDateformat(date),eqt);
+        }
+        
+    }
+     
+}
+function handleEqtchange(){
+    var i,want,tmpcard;
+    
+    want = document.getElementById("eqtinput").value;
+    for(i=0;i<8;i++){
+        tmpcard = document.getElementById("card"+(i+1));
+        if(want > parseInt(tmpcard.getAttribute("vol"))){
+            tmpcard.setAttribute("enough","false");
+        }
+        else{
+            tmpcard.setAttribute("enough","true");
+        }
+    }
+}
+
+function handleSearch(){
+    date = document.getElementById("dateinput").value;
+    if(date=='')
+    {
+        alert("กรุณากรอก Date");
+    }
+    else{
+        console.log("Searching : "+changeDateformat(date));
+    }
+}
+
+function changeDateformat(date){
+    var tmp = date.split('-');
+   
+    return (parseInt(tmp[1])+'-'+parseInt(tmp[2])+'-'+parseInt(tmp[0]));
+}
+
