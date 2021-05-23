@@ -217,7 +217,7 @@ function handleBook(){
         for(var i=0;i<8;i++){
             quan=quan+selectList[i];
         }
-        console.log(quan,user,date,eqt);
+        console.log(quan,user,changeDateformat(date),eqt);
     }
      
 }
@@ -243,8 +243,13 @@ function handleSearch(){
         alert("กรุณากรอก Date");
     }
     else{
-        console.log("Searching : "+date);
+        console.log("Searching : "+changeDateformat(date));
     }
 }
 
+function changeDateformat(date){
+    var tmp = date.split('-');
+   
+    return (parseInt(tmp[1])+'-'+parseInt(tmp[2])+'-'+parseInt(tmp[0]));
+}
 
