@@ -106,7 +106,7 @@ class TimeCard extends HTMLElement {
       this.getAttribute("hour");
     this.shadowRoot.getElementById("end_hour").innerText =
       this.getAttribute("e_hour");
-    this.shadowRoot.getElementById("vol").innerText = this.getAttribute("vol");
+    
     if (this.getAttribute("enough") == "true") {
       this.enable=true;
       this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
@@ -137,19 +137,25 @@ class TimeCard extends HTMLElement {
     }
   }
   static get observedAttributes() {
-    return ["enough"];
+    return ["enough","vol"];
   }
   attributeChangedCallback(name, oldValue, newValue) {
-      this.setAttribute("select","false");
-      this.check=false;
-    if (this.getAttribute("enough") == "true") {
-        this.enable=true;
-        this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
+      if(name=="enough"){
+        this.setAttribute("select","false");
+        this.check=false;
+        if (this.getAttribute("enough") == "true") {
+          this.enable=true;
+          this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
+        }
+        else{
+            this.enable=false;
+            this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card disabled"); 
+        }
       }
-      else{
-          this.enable=false;
-          this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card disabled"); 
+      else if(name=="vol"){
+        this.shadowRoot.getElementById("vol").innerText = this.getAttribute("vol");
       }
+      
 
    
   }
@@ -165,9 +171,14 @@ class TimeCard extends HTMLElement {
   
 }
 customElements.define("time-card", TimeCard);
+
+
+
+// JS main
 var selectList=[0,0,0,0,0,0,0,0];
 var user,date,eqt;
-
+var inputVol=[40,10,10,20,10,30,10,20];
+changeCardVol();
 document
   .getElementById("sel-book")
   .addEventListener("click", () => handleBook());
@@ -178,6 +189,12 @@ document
   .getElementById("sel-search")
   .addEventListener("click", () => handleSearch());
 
+function changeCardVol(){
+    for(var i=0;i<8;i++){
+        tmpcard = document.getElementById("card"+(i+1));
+        tmpcard.setAttribute("vol",inputVol[i]);
+    }
+}
 function handleBook(){
     var i;
     for(i = 0 ; i < 8 ;i++)
@@ -196,7 +213,11 @@ function handleBook(){
         alert("กรุณากรอกข้อมูลให้ครบถ้วน");
     }
     else{
-        console.log(selectList,user,date,eqt);
+        var quan="";
+        for(var i=0;i<8;i++){
+            quan=quan+selectList[i];
+        }
+        console.log(quan,user,date,eqt);
     }
      
 }
