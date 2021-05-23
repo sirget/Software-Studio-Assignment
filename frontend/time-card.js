@@ -108,11 +108,9 @@ class TimeCard extends HTMLElement {
       this.getAttribute("e_hour");
     this.shadowRoot.getElementById("vol").innerText = this.getAttribute("vol");
     if (this.getAttribute("enough") == "true") {
-      console.log("red");
       this.enable=true;
     }
     else{
-        console.log("blue");
         this.enable=false;
         this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card disabled"); 
     }
@@ -138,14 +136,20 @@ class TimeCard extends HTMLElement {
         
     }
   }
+  attributeChangedCallback(name, oldValue, newValue) {
+    console.log('Custom square element attributes changed.');
+   
+  }
+ 
   connectedCallback() {
     this.shadowRoot
       .querySelector(".hour-card")
       .addEventListener("click", () => this.handleClick());
   }
-  discoonnectedCallback() {
+  disconnectedCallback() {
     this.shadowRoot.querySelector(".hour-card").removeEventListener();
   }
+  
 }
 customElements.define("time-card", TimeCard);
 var selectItem=[0,0,0,0,0,0,0,0];
@@ -155,7 +159,9 @@ document
 document
   .getElementById("sel-book")
   .addEventListener("click", () => handleBook());
-
+document
+  .getElementById("eqtinput")
+  .addEventListener("change", () => handleEqtchange());
 
 function handleChangeDate() {
   console.log(document.getElementById("dateinput").value);
@@ -171,15 +177,23 @@ function handleBook(){
             selectList[i]=0;
         }
     }
-    // var card1 = document.getElementById("card1").getAttribute("select");
-    // var card2 = document.getElementById("card2").getAttribute("select");
-    // var card3 = document.getElementById("card3").getAttribute("select");
-    // var card4 = document.getElementById("card4").getAttribute("select");
-    // var card5 = document.getElementById("card5").getAttribute("select");
-    // var card6 = document.getElementById("card6").getAttribute("select");
-    // var card7 = document.getElementById("card7").getAttribute("select");
-    // var card8 = document.getElementById("card8").getAttribute("select");
      console.log(selectList)
+}
+function handleEqtchange(){
+    var i,want,tmpcard;
+    want = document.getElementById("eqtinput").value;
+    for(i=0;i<8;i++){
+        tmpcard = document.getElementById("card"+(i+1));
+        if(want > parseInt(tmpcard.getAttribute("vol"))){
+            //console.log("A" + (i+1));
+            tmpcard.setAttribute("enough","false");
+        }
+        else{
+            //console.log("B" + (i+1));
+            tmpcard.setAttribute("enough","true");
+            //console.log(tmpcard);
+        }
+    }
 }
 
 
