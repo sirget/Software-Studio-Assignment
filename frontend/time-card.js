@@ -141,6 +141,7 @@ class TimeCard extends HTMLElement {
   }
   attributeChangedCallback(name, oldValue, newValue) {
       this.setAttribute("select","false");
+      this.check=false;
     if (this.getAttribute("enough") == "true") {
         this.enable=true;
         this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card "); 
