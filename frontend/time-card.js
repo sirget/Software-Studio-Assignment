@@ -26,7 +26,9 @@ template.innerHTML = `
   align-items: center;
   justify-content: center;
 }
-
+.hour-card{
+    cursor:pointer;
+}
 .hour-card .start,
 .end {
   font-size: medium;
@@ -67,6 +69,7 @@ template.innerHTML = `
 /* disabled styles */
 .disabled {
   background: #d4d6d7;
+  cursor:default;
 }
 
 .disabled .time {
@@ -82,28 +85,58 @@ template.innerHTML = `
 
 .disabled .remain{
     color: white;
-}</style>
-<div class="hour-card">
+}
+
+</style>
+<div class="hour-card " id="hour-card">
         <div class="time">
-            <p class="hour start">8:00</p>
-            <p class="hour end">-9:00</p>
+            <p class="hour start" id="start_hour">8:00</p>
+            <p class="hour end" id="end_hour">-9:00</p>
         </div>
-        <p class="remain">remain: <span class="vol">10</span></p>
+        <p class="remain">remain: <span class="vol" id="vol">10</span></p>
     </div>`;
 class TimeCard extends HTMLElement {
   constructor() {
     super();
+    var enable =true;
+    var click = false;
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    this.shadowRoot.getElementById("hour").innerText =
+    this.shadowRoot.getElementById("start_hour").innerText =
       this.getAttribute("hour");
+    this.shadowRoot.getElementById("end_hour").innerText =
+      this.getAttribute("e_hour");
     this.shadowRoot.getElementById("vol").innerText = this.getAttribute("vol");
     if (this.getAttribute("enough") == "true") {
       console.log("red");
+      this.enable=true;
     }
+    else{
+        console.log("blue");
+        this.enable=false;
+        this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card disabled"); 
+    }
+
   }
   handleClick() {
-    console.log(this.getAttribute("hour") + "was Click");
+    
+    if(this.enable == true){
+        console.log(this.getAttribute("hour") + "was Click");
+        console.log(this.enable);
+        if(this.check == true)
+        {
+            this.setAttribute("select","false");
+            this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card ");
+            
+        }
+        else{
+            this.setAttribute("select","true");
+            this.shadowRoot.getElementById("hour-card").setAttribute("class","hour-card selected");
+            
+        }
+        this.check=!this.check;
+        
+    }
   }
   connectedCallback() {
     this.shadowRoot
@@ -115,11 +148,38 @@ class TimeCard extends HTMLElement {
   }
 }
 customElements.define("time-card", TimeCard);
-
+var selectItem=[0,0,0,0,0,0,0,0];
 document
   .getElementById("dateinput")
   .addEventListener("change", () => handleChangeDate());
+document
+  .getElementById("sel-book")
+  .addEventListener("click", () => handleBook());
+
 
 function handleChangeDate() {
   console.log(document.getElementById("dateinput").value);
 }
+function handleBook(){
+    var selectList = [],i;
+    for(i = 0 ; i < 8 ;i++)
+    {
+        if(document.getElementById("card"+(i+1)).getAttribute("select") == "true"){
+            selectList[i]=1;
+        }
+        else{
+            selectList[i]=0;
+        }
+    }
+    // var card1 = document.getElementById("card1").getAttribute("select");
+    // var card2 = document.getElementById("card2").getAttribute("select");
+    // var card3 = document.getElementById("card3").getAttribute("select");
+    // var card4 = document.getElementById("card4").getAttribute("select");
+    // var card5 = document.getElementById("card5").getAttribute("select");
+    // var card6 = document.getElementById("card6").getAttribute("select");
+    // var card7 = document.getElementById("card7").getAttribute("select");
+    // var card8 = document.getElementById("card8").getAttribute("select");
+     console.log(selectList)
+}
+
+
