@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Prompt"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Booking</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="topic">Select Booking Time</div>
-      <div class="sel">
-        <div class="seldate">
-          <label>Date</label>
-          <input id="dateinput" type="date" />
-          <label>Equity</label>
-          <input type="number" min="0" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt" />
+  <link rel="stylesheet" href="sel-time.css" />
+  <title>Booking</title>
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="topic">Select Booking Time</div>
+    <div class="select">
+      <div class="sel-date">
+        <div class="input-wrapper">
+          <label class="label">Date</label>
+          <input class="input" id="dateinput" type="date" />
         </div>
-        <div class="selhour">
-          <div class="card-container">
-            <time-card hour="8.00" vol="20" enough="true"></time-card>
-            <time-card hour="9.00" vol="20"></time-card>
-            <time-card hour="10.00" vol="20"></time-card>
-            <time-card hour="11.00" vol="20"></time-card>
-            <time-card hour="12.00" vol="20"></time-card>
-            <time-card hour="13.00" vol="20"></time-card>
-            <time-card hour="14.00" vol="20"></time-card>
-            <time-card hour="15.00" vol="20"></time-card>
-            <time-card hour="16.00" vol="20"></time-card>
-          </div>
+        <div class="input-wrapper">
+          <label class="label">Equity</label>
+          <input class="input" type="number" min="0" />
+        </div>
+      </div>
+      <div class="sel-hour">
+        <div class="title-hour"> Select Time interval</div>
+        <div class="card-container">
+          <time-card hour="8.00" vol="20" enough="true"></time-card>
+          <time-card hour="9.00" vol="20"></time-card>
+          <time-card hour="10.00" vol="20"></time-card>
+          <time-card hour="11.00" vol="20"></time-card>
+          <time-card hour="12.00" vol="20"></time-card>
+          <time-card hour="13.00" vol="20"></time-card>
+          <time-card hour="14.00" vol="20"></time-card>
+          <time-card hour="15.00" vol="20"></time-card>
         </div>
       </div>
     </div>
-  </body>
-  <script src="time-card.js"></script>
+  </div>
+</body>
+<script src="time-card.js"></script>
+
 </html>
