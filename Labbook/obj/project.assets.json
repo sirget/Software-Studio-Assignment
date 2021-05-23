@@ -8,24 +8,30 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\bestv\\.nuget\\packages\\": {}
+    "C:\\Users\\koond\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\Labbook\\Labbook.csproj",
+      "projectUniqueName": "D:\\Git\\Software-Studio-Assignment\\Labbook\\Labbook.csproj",
       "projectName": "Labbook",
-      "projectPath": "c:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\Labbook\\Labbook.csproj",
-      "packagesPath": "C:\\Users\\bestv\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\bestv\\Documents\\GitHub\\Software-Studio-Assignment\\Labbook\\obj\\",
+      "projectPath": "D:\\Git\\Software-Studio-Assignment\\Labbook\\Labbook.csproj",
+      "packagesPath": "C:\\Users\\koond\\.nuget\\packages\\",
+      "outputPath": "D:\\Git\\Software-Studio-Assignment\\Labbook\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\bestv\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\koond\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
