@@ -217,7 +217,13 @@ function handleBook(){
         for(var i=0;i<8;i++){
             quan=quan+selectList[i];
         }
-        console.log(quan,user,changeDateformat(date),eqt);
+        if(quan=="00000000"){
+            alert("กรุณาเลือกเวลาจอง");
+        }
+        else{
+            console.log(quan,user,changeDateformat(date),eqt);
+        }
+        
     }
      
 }
