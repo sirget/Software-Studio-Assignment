@@ -175,13 +175,18 @@ customElements.define("time-card", TimeCard);
 
 
 // JS main
+var gagJSON;
 var selectList=[0,0,0,0,0,0,0,0];
 var user,date,eqt;
 var inputVol=[40,10,10,20,10,30,10,20];
-changeCardVol();
-document
+
+if(lablint==false){
+  changeCardVol();
+  document
   .getElementById("sel-book")
   .addEventListener("click", () => handleBook());
+
+}
 document
   .getElementById("eqtinput")
   .addEventListener("change", () => handleEqtchange());
@@ -250,12 +255,34 @@ function handleSearch(){
     }
     else{
         console.log("Searching : "+changeDateformat(date));
+        if(lablint==true){
+      
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange=function(){
+            if(this.readyState == 4 && this.status == 200) {
+              gagJSON=JSON.parse(this.responseText);
+              //console.log(gagJSON);
+              handleChangeVol(gagJSON);
+              handleEqtchange();
+            }
+          }
+          console.log(date);
+          xhttp.open("GET","https://golablint.azurewebsites.net/api/get-available?id=ce8227bb-7ecd-41ea-a9dd-81078bbf496d&date="+date, true);
+          xhttp.send();
+         }
     }
+    
 }
+function handleChangeVol(){
+    inputVol=gagJSON.time;
+    changeCardVol();
+}
+
 
 function changeDateformat(date){
     var tmp = date.split('-');
    
     return (parseInt(tmp[1])+'-'+parseInt(tmp[2])+'-'+parseInt(tmp[0]));
 }
+
 
