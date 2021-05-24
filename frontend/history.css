@@ -6,9 +6,19 @@
   padding: 0;
 }
 
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #f6fffd;
+  padding: 30px 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .search-box {
   margin: 0 auto;
-  max-width: 800px;
+  width: 800px;
   border-radius: 100px;
   overflow: hidden;
   padding: 10px;
@@ -43,19 +53,23 @@
 
 .text-id {
   text-align: center;
-  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 16px;
   margin-bottom: 20px;
 }
 .history-table {
   margin: 0 auto;
   width: 800px;
   padding: 20px;
+  background-color: #fff;
   border-radius: 20px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
 }
 .history-table th {
   padding: 10px;
   color: #009688;
+  
 }
 
 .history-table tr {
