@@ -9,26 +9,36 @@
 </head>
 
 <body>
-    <div class="search-box" action="">
-        <input id="text-input" placeholder="Search ID here...">
-        <button onclick="getInputValue();"><i class="fa fa-search"></i></button>
+    <div class="his-wrapper">
+        <div class="search-box">
+            <input id="text-input" placeholder="Search ID here...">
+            <button onclick="getInputValue();" id="input-btn"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="text-id">ID: <span id="print-text">-</span></div>
+        <table class="history-table">
+            <tr>
+                <th class="equipment">Equipment</th>
+                <th class="status">Status</th>
+                <th class="start">Date Start</th>
+                <th class="end">Date End</th>
+            </tr>
+            <tr>
+                <td>Volmeter</td>
+                <td>Booking</td>
+                <td>2021-11-01 10:00</td>
+                <td>2021-11-01 11:00</td>
+            </tr>
     </div>
-    <div class="text-id">ID: <span id="print-text">-</span></div>
-    <table class="history-table">
-        <tr>
-          <th class="equipment">Equipment</th>
-          <th class="status">Status</th>
-          <th class="start">Date Start</th>
-          <th class="end">Date End</th>
-        </tr>
-        <tr>
-            <td>Volmeter</td>
-            <td>Booking</td>
-            <td>2021-11-01 10:00</td>
-            <td>2021-11-01 11:00</td>
-        </tr>
     <script>
-        function getInputValue(){
+        var input = document.getElementById("text-input");
+        input.addEventListener("keyup", function (event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("input-btn").click();
+            }
+        });
+
+        function getInputValue() {
             var inputVal = document.getElementById("text-input").value;
             document.getElementById('print-text').innerHTML = inputVal;
         }
