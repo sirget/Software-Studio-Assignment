@@ -98,15 +98,7 @@ class LabCard extends HTMLElement{
         this.shadowRoot.querySelector('label').innerText=this.getAttribute('vol')+" pieces";
         this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemName');
     }
-    handleClick(){
-        console.log(this.getAttribute('name'))
-    }
-    connectedCallback(){
-        this.shadowRoot.querySelector('button').addEventListener('click',() => this.handleClick());
-    }
-    discoonnectedCallback(){
-        this.shadowRoot.querySelector('button').removeEventListener();
-    }
+    
     static get observedAttributes() {
       return ["image","desc","vol","itemName"];
     }
@@ -122,7 +114,7 @@ class LabCard extends HTMLElement{
           this.shadowRoot.querySelector('label').innerText=this.getAttribute('vol')+" pieces";
         }
         else if(name=="itemName"){
-       
+          this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingdetail?item=" + this.getAttribute('itemName'));
           this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemName');
         }
      
@@ -134,7 +126,7 @@ customElements.define('lab-card', LabCard);
 //JSON Main
 var gagJSON;
 var xhttp = new XMLHttpRequest();
-
+console.log("aaaa");
 xhttp.onreadystatechange=function(){
   if(this.readyState == 4 && this.status == 200) {
     gagJSON=JSON.parse(this.responseText);
