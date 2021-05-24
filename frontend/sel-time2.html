@@ -14,13 +14,9 @@
 
   <body>
     <div class="wrapper">
-      <div class="topic">Select Booking Time</div>
+      <div class="topic">Booking Time</div>
       <div class="select">
         <div class="sel-date">
-          <div class="input-wrapper">
-            <label class="label">User</label>
-            <input class="input" type="text" id="userinput" />
-          </div>
           <div class="input-wrapper">
             <label class="label">Date</label>
             <input class="input" id="dateinput" type="date" />
@@ -30,10 +26,9 @@
             <input class="input" type="number" min="1" id="eqtinput" />
           </div>
           <button class="sel-btn" id="sel-search">SEARCH</button>
-          <button class="sel-btn" id="sel-book">BOOK</button>
         </div>
         <div class="sel-hour">
-          <div class="title-hour">Select Time interval</div>
+          <div class="title-hour">Time interval</div>
           <div class="card-container">
             <time-card
               no="1"
@@ -106,7 +101,7 @@
     </div>
   </body>
   <script>
-    var lablint = false;
+    var lablint = true;
   </script>
   <script src="time-card.js"></script>
 </html>
