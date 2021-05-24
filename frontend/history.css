@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-.wrapper {
+.his-wrapper {
   width: 100vw;
   min-height: 100vh;
   background-color: #f6fffd;
@@ -16,7 +16,7 @@
   flex-direction: column;
 }
 
-.search-box {
+.his-wrapper .search-box {
   margin: 0 auto;
   width: 800px;
   border-radius: 100px;
@@ -27,7 +27,7 @@
   align-items: center;
 }
 
-.search-box input {
+.his-wrapper .search-box input {
   padding: 10px;
   font-size: 18px;
   float: left;
@@ -38,7 +38,7 @@
   outline: none;
 }
 
-.search-box button {
+.his-wrapper .search-box button {
   float: left;
   width: 10%;
   color: white;
@@ -47,18 +47,18 @@
   border: none;
 }
 
-.search-box button:hover {
+.his-wrapper .search-box button:hover {
   color: #009688;
 }
 
-.text-id {
+.his-wrapper .text-id {
   text-align: center;
+  color: #263238;
   font-size: 20px;
   font-weight: bold;
-  padding: 16px;
-  margin-bottom: 20px;
+  padding: 20px;
 }
-.history-table {
+.his-wrapper .history-table {
   margin: 0 auto;
   width: 800px;
   padding: 20px;
@@ -66,28 +66,28 @@
   border-radius: 20px;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
 }
-.history-table th {
+.his-wrapper .history-table th {
   padding: 10px;
   color: #009688;
   
 }
 
-.history-table tr {
+.his-wrapper .history-table tr {
   text-align: center;
 }
 
-th.equipment {
+.his-wrapper .history-table th.equipment {
   width: 25%;
 }
 
-th.status {
+.his-wrapper .history-table th.status {
   width: 25%;
 }
 
-th.start {
+.his-wrapper .history-table th.start {
   width: 25%;
 }
 
-th.end {
+.his-wrapper .history-table th.end {
   width: 25%;
 }
