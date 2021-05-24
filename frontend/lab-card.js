@@ -114,8 +114,9 @@ class LabCard extends HTMLElement{
           this.shadowRoot.querySelector('label').innerText=this.getAttribute('vol')+" pieces";
         }
         else if(name=="itemName"){
-          this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingdetail?item=" + this.getAttribute('itemName'));
           this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemName');
+          this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingdetail?item=" + this.getAttribute('itemName'));
+         
         }
      
     }
