@@ -42,6 +42,12 @@ template.innerHTML=`
 .labcard .detail .title {
   font-size: 24px;
   color: rgba(38, 50, 56);
+  height:30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.labcard .detail .title:hover{
+  overflow: visible;
 }
 
 .labcard .detail .equity {
@@ -96,11 +102,11 @@ class LabCard extends HTMLElement{
         this.shadowRoot.querySelector('img').setAttribute('src',this.getAttribute('image'));
         this.shadowRoot.querySelector('p').innerText=this.getAttribute('desc');
         this.shadowRoot.querySelector('label').innerText=this.getAttribute('vol')+" pieces";
-        this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemName');
+        this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemname');
     }
     
     static get observedAttributes() {
-      return ["image","desc","vol","itemName"];
+      return ["image","desc","vol","itemname"];
     }
     attributeChangedCallback(name, oldValue, newValue) {
         if(name=="image"){
@@ -113,9 +119,9 @@ class LabCard extends HTMLElement{
        
           this.shadowRoot.querySelector('label').innerText=this.getAttribute('vol')+" pieces";
         }
-        else if(name=="itemName"){
-          this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemName');
-          this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingdetail?item=" + this.getAttribute('itemName'));
+        else if(name=="itemname"){
+          this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemname');
+         
          
         }
      
@@ -127,7 +133,7 @@ customElements.define('lab-card', LabCard);
 //JSON Main
 var gagJSON;
 var xhttp = new XMLHttpRequest();
-console.log("aaaa");
+
 xhttp.onreadystatechange=function(){
   if(this.readyState == 4 && this.status == 200) {
     gagJSON=JSON.parse(this.responseText);
@@ -140,9 +146,10 @@ xhttp.send();
 
 function handleChangecard(json){
   for(var i=0;i<5;i++){
-    document.getElementById("gtool"+(i+1)).setAttribute("image",json[i].image);
-    document.getElementById("gtool"+(i+1)).setAttribute("vol",json[i].amount);
-    document.getElementById("gtool"+(i+1)).setAttribute("itemName",json[i].name);
-    document.getElementById("gtool"+(i+1)).setAttribute("desc",json[i].description);
+    var tmpcard=document.getElementById("gtool"+(i+1));
+    tmpcard.setAttribute("image",json[i].image);
+    tmpcard.setAttribute("vol",json[i].amount);
+    tmpcard.setAttribute("itemname",json[i].name);
+    tmpcard.setAttribute("desc",json[i].description);
   }
 } 
