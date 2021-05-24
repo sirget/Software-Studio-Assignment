@@ -98,18 +98,51 @@ class LabCard extends HTMLElement{
         this.shadowRoot.querySelector('label').innerText=this.getAttribute('vol')+" pieces";
         this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemName');
     }
-    handleClick(){
-        console.log(this.getAttribute('name'))
-    }
-    connectedCallback(){
-        this.shadowRoot.querySelector('button').addEventListener('click',() => this.handleClick());
-    }
-    discoonnectedCallback(){
-        this.shadowRoot.querySelector('button').removeEventListener();
-    }
     
+    static get observedAttributes() {
+      return ["image","desc","vol","itemName"];
+    }
+    attributeChangedCallback(name, oldValue, newValue) {
+        if(name=="image"){
+          this.shadowRoot.querySelector('img').setAttribute('src',this.getAttribute('image'));
+        }
+        else if(name=="desc"){
+          this.shadowRoot.querySelector('p').innerText=this.getAttribute('desc');
+        }
+        else if(name=="vol"){
+       
+          this.shadowRoot.querySelector('label').innerText=this.getAttribute('vol')+" pieces";
+        }
+        else if(name=="itemName"){
+          this.shadowRoot.querySelector('h3').innerText=this.getAttribute('itemName');
+          this.shadowRoot.querySelector('a').setAttribute('href', "/Bookingdetail?item=" + this.getAttribute('itemName'));
+         
+        }
+     
+    }
 }
 customElements.define('lab-card', LabCard);
 
 
+//JSON Main
+var gagJSON;
+var xhttp = new XMLHttpRequest();
+console.log("aaaa");
+xhttp.onreadystatechange=function(){
+  if(this.readyState == 4 && this.status == 200) {
+    gagJSON=JSON.parse(this.responseText);
+    console.log(gagJSON);
+    handleChangecard(gagJSON);
+  }
+}
+xhttp.open("GET","https://golablint.azurewebsites.net/api/equipment?limit=5", true);
+xhttp.send();
 
+function handleChangecard(json){
+  for(var i=0;i<5;i++){
+    document.getElementById("gtool"+(i+1)).setAttribute("image",json[i].image);
+    document.getElementById("gtool"+(i+1)).setAttribute("vol",json[i].amount);
+    document.getElementById("gtool"+(i+1)).setAttribute("itemName",json[i].name);
+    document.getElementById("gtool"+(i+1)).setAttribute("desc",json[i].description);
+  }
+} 
