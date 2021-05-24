@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
@@ -6,15 +6,15 @@
   padding: 0;
 }
 
-.search-box{
-    margin: 0 auto;
-    max-width: 800px;
-    border-radius: 100px;
-    overflow: hidden;
-    padding: 10px;
-    background: #f1f1f1;
-    display: flex;
-    align-items: center;
+.search-box {
+  margin: 0 auto;
+  max-width: 800px;
+  border-radius: 100px;
+  overflow: hidden;
+  padding: 10px;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
 }
 
 .search-box input {
@@ -41,25 +41,39 @@
   color: #009688;
 }
 
-.text-id{
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 20px;
+.text-id {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 20px;
 }
-.history-table{
-    margin: 0 auto;
-    
-    width: 800px;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
+.history-table {
+  margin: 0 auto;
+  width: 800px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.1);
 }
-.history-table th{
-    padding: 10px;
-    color: #009688;
+.history-table th {
+  padding: 10px;
+  color: #009688;
 }
 
-.history-table tr{
-    padding: 10px;
-    text-align: center;
+.history-table tr {
+  text-align: center;
+}
+
+th.equipment {
+  width: 25%;
+}
+
+th.status {
+  width: 25%;
+}
+
+th.start {
+  width: 25%;
+}
+
+th.end {
+  width: 25%;
 }
