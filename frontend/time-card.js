@@ -177,7 +177,7 @@ customElements.define("time-card", TimeCard);
 // JS main
 var gagJSON;
 var selectList=[0,0,0,0,0,0,0,0];
-var user,date,eqt;
+var user,date,eqt,itemid;
 var inputVol=[40,10,10,20,10,30,10,20];
 
 if(lablint==false){
@@ -283,6 +283,12 @@ function changeDateformat(date){
     var tmp = date.split('-');
    
     return (parseInt(tmp[1])+'-'+parseInt(tmp[2])+'-'+parseInt(tmp[0]));
+}
+
+function getItemid(){
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  itemid = urlParams.get("itemid");
 }
 
 

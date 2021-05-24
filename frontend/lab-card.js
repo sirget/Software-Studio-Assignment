@@ -141,7 +141,7 @@ xhttp.onreadystatechange=function(){
     handleChangecard(gagJSON);
   }
 }
-xhttp.open("GET","https://golablint.azurewebsites.net/api/equipment?limit=5", true);
+xhttp.open("GET","https://golablint.azurewebsites.net/api/equipment", true);
 xhttp.send();
 
 function handleChangecard(json){
@@ -151,5 +151,6 @@ function handleChangecard(json){
     tmpcard.setAttribute("vol",json[i].amount);
     tmpcard.setAttribute("itemname",json[i].name);
     tmpcard.setAttribute("desc",json[i].description);
+    tmpcard.setAttribute("itemid",json.id);
   }
 } 
